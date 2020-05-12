@@ -2,6 +2,7 @@ package p.gordenyou.plugin;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -32,6 +33,12 @@ public class BaseActivity extends Activity implements ActivityStandard {
         //我们最终还是需要宿主使用反射获取Activity，所以我们需要添加 Activity 的类名
         intent = new Intent().putExtra("className", intent.getComponent().getClassName());
         proxyActivity.startActivity(intent);
+    }
+
+    public ComponentName startService(Intent service) {
+
+        proxyActivity.startService(new Intent().putExtra("className", service.getComponent().getClassName()));
+        return null;
     }
 
     @SuppressLint("MissingSuperCall")

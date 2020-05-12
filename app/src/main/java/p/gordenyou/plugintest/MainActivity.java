@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
     // 跳转插件的 Activity
     public void startPluginActivity(View view) {
 
-        File file = new File(Environment.getExternalStorageDirectory() + File.separator + "p.apk");
+        File file = new File(Environment.getExternalStorageDirectory() + File.separator + "plugin-debug.apk");
         String pluginPath = file.getAbsolutePath();
 
         PackageManager packageManager = getPackageManager();

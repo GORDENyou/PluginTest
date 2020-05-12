@@ -45,7 +45,7 @@ public class PluginManager {
     public void loadPlugin() {
         try {
             // ############获取 Class#############
-            File file = new File(Environment.getExternalStorageDirectory() + File.separator + "p.apk");
+            File file = new File(Environment.getExternalStorageDirectory() + File.separator + "plugin-debug.apk");
             if (!file.exists()) {
                 Log.d(TAG, "loadPlugin: 插件包不存在");
                 return;

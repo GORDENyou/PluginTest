@@ -1,6 +1,7 @@
 package p.gordenyou.plugintest;
 
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -56,6 +57,12 @@ public class ProxyActivity extends Activity {
     public void startActivity(Intent intent) {
         String className = intent.getStringExtra("className");
         super.startActivity(new Intent(this, ProxyActivity.class).putExtra("className", className));
+    }
 
+    @Override
+    public ComponentName startService(Intent service) {
+        String className = service.getStringExtra("className");
+
+        return super.startService(new Intent(this, ProxyService.class).putExtra("className", className));
     }
 }
